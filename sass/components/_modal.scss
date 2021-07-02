@@ -1,0 +1,209 @@
+@mixin font($fs, $lh, $ls) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--animation-timing-function);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--accent-color);
+}
+
+.is-hidden .modal {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 250ms var(--animation-timing-function),
+    visibility 250ms var(--animation-timing-function);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-background-color);
+  color: rgba(0, 0, 0, 1);
+
+  margin-top: 8px;
+  margin-right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: block;
+  margin-left: auto;
+  padding: 40px;
+
+  &__title {
+    color: var(--title-text-color);
+    font-family: Roboto;
+    font-weight: bold;
+    @include font(20px, 1.15, 0.03em);
+
+    text-align: center;
+    padding-bottom: 12px;
+  }
+}
+
+.modal-form__lable {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.modal-form__lable ::placeholder {
+  @include font(12px, 1.166, 0.01em);
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form__data {
+  margin-bottom: 4px;
+  @include font(12px, 1.166, 0.01em);
+  color: #757575;
+}
+
+.modal-form__input {
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 40px;
+  font: inherit;
+}
+
+.modal-form__icon {
+  position: absolute;
+  left: 12px;
+  bottom: 4px;
+  transform: translateY(-50%);
+  display: inline-block;
+}
+
+.modal-form__lable {
+  &:focus-within .modal-form__input {
+    outline-color: var(--accent-color);
+  }
+}
+
+.modal-form__lable {
+  &:focus-within .modal-form__icon {
+    fill: var(--accent-color);
+  }
+}
+
+.modal-form__input:hover {
+  border-color: var(--accent-color);
+  transition: border-color 250ms var(--animation-timing-function);
+}
+
+.modal-form__comment {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+}
+
+.modal-form__comment:hover {
+  border-color: var(--accent-color);
+  transition: border-color 250ms var(--animation-timing-function);
+}
+
+.modal-form__comment:focus-within {
+  outline-color: var(--accent-color);
+}
+
+.policy-form {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+.policy-form__checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+}
+
+.policy-form__input {
+  &:checked + .policy-form__checkbox {
+    border-color: transparent;
+    background-color: var(--accent-color);
+    background-image: url('../images/svg/check.svg');
+    background-size: contain;
+    background-origin: border-box;
+  }
+}
+
+.policy-form__link {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.policy-form__lable {
+  @include font(14px, 1.714, 0.03em);
+}
+
+.policy-form__button {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px 55px;
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+  width: 200px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(24, 140, 232, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -1,0 +1,44 @@
+@mixin font($fs, $lh, $ls) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+.title-none {
+  display: none;
+}
+
+.features-list {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 94px;
+  padding-inline-start: 0;
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.features-list__icon {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-background-color);
+  border-radius: 4px;
+}
+
+.features-list {
+  &__title {
+    color: var(--title-text-color);
+    @include font(14px, 1.142, 0.03em);
+
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  &__text {
+    @include font(14px, 1.714, 0.03em);
+  }
+}

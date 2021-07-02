@@ -1,0 +1,28 @@
+%logo-fonts {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.192;
+  letter-spacing: 0.03em;
+}
+
+.page-header__logo {
+  @extend %logo-fonts;
+  padding-top: 24px;
+  padding-bottom: 25px;
+
+  color: var(--black);
+}
+
+.logo-footer {
+  display: block;
+  color: var(--primary-background-color);
+  @extend %logo-fonts;
+
+  margin-bottom: 20px;
+}
+
+.logo-first-part {
+  color: var(--accent-color);
+  @extend %logo-fonts;
+}

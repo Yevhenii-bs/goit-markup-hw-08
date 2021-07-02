@@ -1,0 +1,43 @@
+.icons-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 0 32px 30px;
+}
+
+.icons-list__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.icons-list__link {
+  width: 44px;
+  height: 44px;
+
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-background-color);
+  }
+}
+
+.icons-list__link {
+  &:hover,
+  &:focus {
+    .icons-list__icon {
+      fill: var(--primary-background-color);
+    }
+  }
+}
+
+.icons-list__icon {
+  width: 20px;
+  height: 20px;
+
+  fill: var(--icons-color);
+}

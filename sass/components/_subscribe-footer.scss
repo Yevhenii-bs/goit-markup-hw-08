@@ -1,0 +1,76 @@
+@mixin font($fs, $lh, $ls) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+.footer-subscribe {
+  display: flex;
+}
+
+.subscribe-title {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  @include font(14px, 1.14, 0.03em);
+
+  text-transform: uppercase;
+  color: var(--primary-background-color);
+}
+
+.footer-subscribe__input {
+  padding: 5px 5px;
+  margin-right: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  width: 356px;
+  height: 50px;
+
+  font-family: inherit;
+
+  font-size: 100%;
+  line-height: 1.15;
+
+  background-color: var(--footer-hero);
+}
+
+.footer-subscribe__input::placeholder {
+  font-family: Roboto;
+
+  @include font(16px, 1.25, 0.03em);
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-subscribe__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  @include font(16px, 1.87, 0.06em);
+
+  border-radius: 4px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.footer-subscribe__button:hover,
+.footer-subscribe__button:focus,
+.footer-subscribe__button:active {
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+}
+.footer-subscribe__svg {
+  margin-left: 10px;
+}

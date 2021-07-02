@@ -1,0 +1,48 @@
+@mixin font($fs, $lh, $ls) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+.hide {
+  display: none;
+}
+
+.filter-list {
+  width: 611px;
+  margin: 0px auto;
+  padding: 94px 0 50px;
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.filter-list__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filter-list__button {
+  color: var(--title-text-color);
+  font-family: inherit;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  background-color: var(--secondary-background-color);
+  border-radius: 4px;
+  padding: 6px 22px;
+
+  &:hover,
+  &:focus {
+    color: var(--primary-background-color);
+    background-color: var(--accent-color);
+  }
+}

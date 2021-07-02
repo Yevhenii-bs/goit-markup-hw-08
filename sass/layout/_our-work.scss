@@ -1,0 +1,33 @@
+.work-list {
+  display: flex;
+  padding-bottom: 94px;
+
+  &__item {
+    position: relative;
+    z-index: 1;
+    margin-right: 30px;
+  }
+
+  &__text {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    width: 100%;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.142;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-background-color);
+    background-color: var(--background-overflow);
+    padding: 27px;
+  }
+}
+
+.work-list__item:not(:last-child) {
+  margin-right: 30px;
+}

@@ -1,0 +1,70 @@
+.section-color {
+  background-color: var(--secondary-background-color);
+}
+
+.section-title {
+  color: var(--title-text-color);
+  font-weight: bold;
+  @include font(36px, 1.166, 0.03em);
+
+  text-align: center;
+  padding-top: 94px;
+  padding-bottom: 50px;
+}
+
+.team-list {
+  display: flex;
+  padding-bottom: 94px;
+  width: 270px;
+
+  text-align: center;
+
+  &__photo {
+    display: block;
+    height: auto;
+    width: 270px;
+  }
+
+  &__item {
+    margin-right: 30px;
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+  }
+}
+
+.team-list__item:nth-child(4) {
+  margin-right: 0px;
+}
+
+.team-description {
+  background-color: var(--primary-background-color);
+  display: inline-block;
+  width: 270px;
+  border-radius: 0px 0px 4px 4px;
+
+  &__member {
+    padding: 30px 9px 0;
+    color: var(--title-text-color);
+    @include font(16px, 1.187, 0.03em);
+  }
+
+  &__position {
+    @include font(16px, 1.187, 0.03em);
+    padding: 0 20px;
+    margin-top: 10px;
+  }
+}
+
+%font {
+  font-size: 16px;
+  line-height: 1.187;
+  letter-spacing: 0.03em;
+}
+
+@mixin font($fs, $lh, $ls) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+}

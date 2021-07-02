@@ -1,0 +1,39 @@
+%font {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+}
+
+.footer {
+  background-color: var(--footer-hero);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: block;
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-adress {
+  width: 231px;
+  margin-right: 70px;
+}
+
+.contacts-list__street {
+  margin-bottom: 9px;
+  color: var(--primary-background-color);
+  @extend %font;
+}
+
+.contacts-list__contact:not(:last-child) {
+  display: inline-block;
+  margin-bottom: 9px;
+}
+
+.contacts-list__contact {
+  color: var(--footer-contact-color);
+  @extend %font;
+}
