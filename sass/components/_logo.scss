@@ -10,12 +10,16 @@
   @extend %logo-fonts;
   padding-top: 24px;
   padding-bottom: 25px;
-
+  display: inline-block;
   color: var(--black);
+  @media screen and (max-width: 767px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 
 .logo-footer {
-  display: block;
+  display: inline-block;
   color: var(--primary-background-color);
   @extend %logo-fonts;
 

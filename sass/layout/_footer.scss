@@ -9,17 +9,48 @@
   background-color: var(--footer-hero);
   padding-top: 60px;
   padding-bottom: 60px;
-  display: block;
 }
 
 .footer-container {
-  display: flex;
-  align-items: baseline;
+  text-align: center;
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+    display: flex;
+    align-items: baseline;
+    text-align: left;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    max-width: 480px;
+  }
+}
+
+.footer-wrap {
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+  }
 }
 
 .footer-adress {
-  width: 231px;
-  margin-right: 70px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  @media screen and (min-width: 1200px) {
+    margin-right: 70px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+
+  // width: 231px;
+  // margin-right: 70px;
 }
 
 .contacts-list__street {

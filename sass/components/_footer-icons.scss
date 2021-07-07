@@ -1,6 +1,13 @@
 .footer-icons {
-  margin-right: 93px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
   &__title {
+    text-align: center;
     font-family: Roboto;
     font-weight: bold;
     font-size: 14px;
@@ -9,12 +16,17 @@
     text-transform: uppercase;
 
     color: var(--primary-background-color);
+    @media screen and (min-width: 1200px) {
+      text-align: left;
+    }
   }
 }
 
 .footer-icons__list {
   display: flex;
   margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
   width: 206px;
 }
 
