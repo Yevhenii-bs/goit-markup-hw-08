@@ -39,14 +39,15 @@
   @media screen and (min-width: 1200px) {
     margin-left: 93px;
   }
-
   display: flex;
 
   &__link {
-    position: relative;
     @extend %link-style;
 
     color: var(--black);
+  }
+  &__link.current {
+    position: relative;
   }
 }
 
@@ -142,27 +143,4 @@
   @media screen and (max-width: 767px) {
     height: 60px;
   }
-}
-
-.mob-menu {
-  @media screen and (max-width: 767px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #ffffff;
-    overflow: auto;
-    opacity: 1;
-    z-index: 2;
-  }
-}
-
-.mob-menu__container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 48px 40px;
 }

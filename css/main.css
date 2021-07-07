@@ -159,8 +159,11 @@ p {
 }
 
 .site-nav__link {
-  position: relative;
   color: var(--black);
+}
+
+.site-nav__link.current {
+  position: relative;
 }
 
 .site-nav__link .current {
@@ -250,29 +253,6 @@ p {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .mob-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #ffffff;
-    overflow: auto;
-    opacity: 1;
-    z-index: 2;
-  }
-}
-
-.mob-menu__container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 48px 40px;
-}
-
 .button {
   padding: 10px 32px;
   color: var(--primary-background-color);
@@ -328,14 +308,19 @@ p {
   }
 }
 
+.overlay {
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .hero-section {
   text-align: center;
   background: var(--footer-hero);
   padding-top: 118px;
   padding-bottom: 118px;
-  width: 100%;
   max-width: 1600px;
-  max-height: 600px;
+  height: auto;
   margin-right: auto;
   margin-left: auto;
   background-repeat: no-repeat;
@@ -376,7 +361,8 @@ p {
 @media screen and (min-width: 1200px) {
   .hero-section {
     max-width: 1600px;
-    max-height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-desk-min.jpg);
   }
 }
@@ -405,6 +391,13 @@ p {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
 .title-none {
   display: none;
 }
@@ -419,12 +412,6 @@ p {
     display: flex;
     flex-wrap: wrap;
     margin-left: -30px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .features-list {
-    padding-top: 94px;
   }
 }
 
@@ -479,6 +466,10 @@ p {
   letter-spacing: 0.03em;
 }
 
+.section-none {
+  padding-top: 0;
+}
+
 @media screen and (max-width: 1199px) {
   .section-none {
     display: none;
@@ -487,7 +478,6 @@ p {
 
 .work-list {
   display: flex;
-  padding-bottom: 94px;
 }
 
 .work-list__item {
@@ -1042,24 +1032,57 @@ p {
   top: 0;
   left: 0;
   z-index: 2;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
+  visibility: visible;
   opacity: 1;
   transition: opacity 250ms var(--animation-timing-function);
+  overflow-y: scroll;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .backdrop {
+    display: flex;
+    justify-content: center;
+    padding: 40px 40px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .backdrop {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+  }
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 40px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--animation-timing-function);
-  min-width: 528px;
-  min-height: 581px;
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 1199px) {
+  .modal {
+    max-width: 450px;
+    width: 90vw;
+    max-height: 609px;
+    height: 90vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    min-width: 528px;
+    min-height: 581px;
+  }
 }
 
 .modal-close:hover,
@@ -1105,20 +1128,30 @@ p {
 }
 
 .modal-form {
-  display: block;
+  width: 100%;
   margin-left: auto;
-  padding: 40px;
 }
 
 .modal-form__title {
   color: var(--title-text-color);
-  font-family: Roboto;
   font-weight: bold;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
   text-align: center;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+@media screen and (max-width: 479px) {
+  .modal-form__title {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-form__title {
+    line-height: 1.15;
+  }
 }
 
 .modal-form__lable {
@@ -1126,6 +1159,12 @@ p {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1199px) {
+  .modal-form__lable {
+    max-width: 370px;
+  }
 }
 
 .modal-form__lable ::placeholder {
@@ -1144,18 +1183,18 @@ p {
 }
 
 .modal-form__input {
+  width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  padding-left: 40px;
+  padding: 11px 42px;
   font: inherit;
 }
 
 .modal-form__icon {
   position: absolute;
   left: 12px;
-  bottom: 4px;
-  transform: translateY(-50%);
+  top: 50%;
   display: inline-block;
 }
 
@@ -1178,6 +1217,14 @@ p {
   height: 120px;
   padding: 12px 16px;
   resize: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 479px) {
+  .modal-form__comment {
+    height: 100px;
+  }
 }
 
 .modal-form__comment:hover {
@@ -1190,10 +1237,25 @@ p {
 }
 
 .policy-form {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  display: flex;
+  font-size: 12px;
+  line-height: 1.17;
+  margin-bottom: 30px;
+  display: inline-block;
   align-items: center;
+}
+
+@media screen and (min-width: 480px) {
+  .policy-form {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .policy-form {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .policy-form__input {
@@ -1227,12 +1289,15 @@ p {
 .policy-form__link {
   color: var(--accent-color);
   text-decoration: underline;
+  font-size: 12px;
+  line-height: 1.17;
 }
 
-.policy-form__lable {
-  font-size: 14px;
-  line-height: 1.714;
-  letter-spacing: 0.03em;
+@media screen and (min-width: 1200px) {
+  .policy-form__link {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .policy-form__button {
@@ -1251,6 +1316,36 @@ p {
 .policy-form__button:hover, .policy-form__button:focus {
   background-color: #188ce8;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-menu-backdrop__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 48px 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-backdrop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow: auto;
+    opacity: 1;
+    z-index: 2;
+    overflow-y: scroll;
+  }
 }
 
 .menu-open {
