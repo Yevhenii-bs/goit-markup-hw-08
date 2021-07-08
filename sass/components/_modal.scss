@@ -45,11 +45,11 @@
   visibility: hidden;
   transition: opacity 250ms var(--animation-timing-function),
     visibility 250ms var(--animation-timing-function);
-  @media screen and (max-width: 767px) {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
+  // @media screen and (max-width: 767px) {
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   pointer-events: none;
+  // }
 }
 
 .modal-close {
@@ -75,7 +75,6 @@
 .modal-form {
   width: 100%;
   margin-left: auto;
-  // padding: 40px;
 
   &__title {
     color: var(--title-text-color);
@@ -99,7 +98,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+
   @media screen and (max-width: 1199px) {
     max-width: 370px;
   }
@@ -123,15 +122,15 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 11px 42px;
-
+  margin-bottom: 10px;
   font: inherit;
 }
 
 .modal-form__icon {
   position: absolute;
   left: 12px;
-  top: 50%;
-  display: inline-block;
+  top: 44%;
+  display: block;
 }
 
 .modal-form__lable {
@@ -176,6 +175,7 @@
 .policy-form {
   font-size: 12px;
   line-height: 1.17;
+  letter-spacing: 0.03em;
   margin-bottom: 30px;
   display: inline-block;
   align-items: center;
@@ -229,10 +229,6 @@
   }
 }
 
-// .policy-form__lable {
-//   @include font(14px, 1.714, 0.03em);
-// }
-
 .policy-form__button {
   position: relative;
   left: 50%;
@@ -244,6 +240,7 @@
   height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
 
   &:hover,
   &:focus {

@@ -25,22 +25,6 @@
   }
 }
 
-.menu-open {
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-  display: inline-flex;
-  margin-left: auto;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-
-  &:hover,
-  &:focus {
-    color: var(--accent-color);
-  }
-}
-
 .mob-menu__close {
   position: absolute;
   right: 15px;

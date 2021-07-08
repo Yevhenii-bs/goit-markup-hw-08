@@ -1,16 +1,46 @@
-.portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 94px;
-
-  &__item {
-    width: 370px;
-    margin: 0 30px 30px 0;
+.portfolio-container {
+  padding-top: 60px;
+  background-color: #fff;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    padding-top: 60px;
+    padding-bottom: 14px;
+  }
+  @media screen and (min-width: 360px) and (max-width: 767px) {
+    padding-top: 60px;
+    padding-bottom: 40px;
   }
 }
 
-.portfolio-list__item:nth-child(3n) {
-  margin-right: 0;
+.portfolio-list {
+  padding-bottom: 94px;
+
+  margin-bottom: -30px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+  }
+  @media screen and (min-width: 360px) and (max-width: 1199px) {
+    padding-bottom: 60px;
+  }
+}
+
+.portfolio-list__item {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin-right: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 90px) / 3);
+    margin-right: 30px;
+  }
 }
 
 .portfolio-overlay__project {
@@ -22,6 +52,8 @@
 .text-holder {
   border: 1px solid var(--gray);
   background-color: var(--primary-background-color);
+
+  flex-grow: 1;
 
   &__title {
     color: var(--title-text-color);
@@ -39,6 +71,14 @@
     letter-spacing: 0.03em;
 
     padding: 0 24px 20px;
+  }
+}
+
+.portfolio-list__link {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 }
 
